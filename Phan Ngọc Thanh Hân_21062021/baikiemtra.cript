@@ -1,0 +1,49 @@
+var images = document.querySelectorAll(".image img");
+var prev = document.querySelector(".prev");
+var arxt = document.querySelector("text");
+var close = document.querySelector(".close");
+var gallerying = document.querySelector(".gallery_ing"); 
+var gallery = document.querySelector(".gallery"); 
+var currentIndex=0
+function showGallery()   
+else {
+  prev.classList.remove('hide');  
+  if (currentIdx === images.length - 1) {
+    prev.classList.add('hide');  
+  }
+  else{pre.classlist.remove('hide')
+  }
+}
+
+images.forEach((item, index) => {
+  item.addEventListener('click', function() {
+    currentIndex = index;
+    showGallery();
+  });
+});
+
+close.addEventListener('click', function() {
+  // Add your functionality for closing the gallery here
+});
+
+gallery.classList.remove('show');
+
+document.addEventListener('keydown', function (e) {
+  if (e.keyCode === 27) { // Close gallery on Esc key press
+    gallery.classList.remove('show');
+  }
+});
+
+prev.addEventListener('click', function() {
+  if (currentIndex > 0) {
+    currentIndex--;
+    showGallery();
+  }
+});
+
+next.addEventListener('click', function() {
+  if (currentIndex < images.length - 1) {
+    currentIndex++;
+    showGallery();
+  }
+});
